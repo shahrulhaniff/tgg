@@ -1,0 +1,11 @@
+<p>login {{title}} works!</p>
+
+
+<input class="form-control" placeholder="id bulus" type="text"  [(ngModel)]="userid">
+<input class="form-control" placeholder="password" type="text"   [(ngModel)]="passwrd">
+
+<div class="d-grid gap-2">
+    <button type="button" class="btn btn-danger" (click)="login()">Bulus Login</button>
+  </div>
+
+<p class="w3-large w3-center" *ngIf="loginfailed === true" style="color: red;">Wrong Username or Password!</p>

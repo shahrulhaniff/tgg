@@ -1,0 +1,70 @@
+<!-- <app-title></app-title> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- <ul class="topnav">
+  <li><a class="active" href="home">Home</a></li>
+  <li><a href="dashboard">Dashboard</a></li>
+  <li><a href="profile">Profile</a></li>
+  <li class="right"><a (click)="logout()">Logout</a></li>
+</ul> -->
+
+<!-- <img src="assets/images/small-logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top"> TG GLOBAL -->
+<!-- <button class="roundedx" (click)="toggleCL()"><i class="fa fa-navicon"></i></button> -->
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : '' ">
+<!-- topnav -->
+<nav class="navbar navbar-expand-lg topnav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets/images/small-logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">TG GLOBAL</a>
+    <button class="roundedx" (click)="toggleCL()"><i class="fa fa-navicon"></i></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- video -->
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">A</button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+    <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+      <i class="fa fa-times close-icon"></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+        <i class="sidenav-link-icon" [class]="data.icon"></i>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+      </a>
+    </li>
+    <li class="sidenav-nav-item"><button class="logo" (click)="logout()">L</button></li>
+  </ul>
+</div>
+
+
+<!-- 
+<app-breadcrumbs></app-breadcrumbs>
+<router-outlet></router-outlet> -->
